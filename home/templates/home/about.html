@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT US</title>
+    <link rel="stylesheet" href="/static/index.css"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="/static/images/LOGOO.jpg"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" ></i>
+                <ul>
+                    <li><a href="/" >HOME</a></li>
+                    <li><a href="/about" >ABOUT</a></li>
+                    <li><a href="/contact" >CONTACT US</a></li>
+                    <li><a href="/signin"><button type="submit" class="hero-btn red-btn">Sign In</button></a></li>
+                </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>About Us</h1>
+    </section>
+
+    <section class="aboutus">
+        <div class="row">
+            <div class="aboutpara">
+                <h1>
+                    World's biggest community for content creators
+</h1>
+<p>
+    Our networking website will connect content creators with organisations to create mutual beneficial opportunities. 
+Instead of simply being just a stay connected website, it will help content creators find work and the organisations 
+can find ideal advertisers for brand recognition and to promote brand loyalty.
+<br>
+<b>Basic functionality</b>
+<br>
+• Users can create their profiles and can add their social media link to show their reach and impression. They 
+can also approach various companies by sending them promotional request.
+<br>
+• The organisations looking for advertising their product or services can review their profiles and rankings. 
+Once they have chosen the influencer(s) of their choice, they can send them a promotion request.
+<br>
+• The promotional request can also be sorted according to the one’s relevance (type of audience they are 
+engaged with), their engagement, price etc.
+<br>
+<b>Utility </b>
+<br>
+Our platform will provide special support to small entrepreneurs to advertise their product and help them reach 
+out to the local public.
+</p>
+    <a href="" class="hero-btn red-btn">GET STARTED NOW</a>
+            </div>
+    <div class="aboutpara">
+        <img src="/static/images/about.jpg">
+    </div>
+        </div>
+    </section>
+   
+        <section class="footer">
+            <h4>About Us</h4>
+            <p> We believe in the power of creativity, technology and talent to create better futures for our people, clients and communities
+
+                We approach all that we do with confidence: to try the new and to seek the unexpected.
+            </p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+        </section>
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right ="0";
+    }
+    function hideMenu(){
+        navLinks.style.right ="-200";
+    }
+</script>
+</body>
+</html>
