@@ -1,0 +1,75 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/signin.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+        integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container mt-3" id="container" >
+        <div class="form-container sign-up-container mt-1">
+            
+        </div>
+
+        <div class="form-container " >
+            <form action="{% url 'user_login' %}" method="POST">
+                {% csrf_token %}
+                <h1 class="font-weight-bold"><b>Sign in</b></h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f" style='color:white; font-size:24px' ></i></a>
+
+                    <a class="btn btn-large btn-primary " href="">
+                        <i class="fab fa-google" style='color:white; font-size:24px' aria-hidden="true"></i>
+
+                        <a href="" class="social"><i
+                                class="fab fa-linkedin-in " style='color:white; font-size:24px' ></i></a>
+                </div>
+                <span style="margin-top: 10px;">or use your account</span>
+                <input type="text" placeholder="Username or Email" name="username" />
+                <input type="password" placeholder="Password" name="password"/>
+                <button style=" margin-bottom: 10px"; class="but">Sign In</button>                
+             {% for message in messages %}
+                <p style="color:green";>{{message}}</p>
+            {% endfor %}
+             <div class="mt-4">
+        <div class="d-flex justify-content-center links">
+            Don't have an account? <a href="{% url 'user_login' %}" class="ml-2">Sign up</a>
+        </div>
+        </div>
+
+            </form>
+        </div>
+     
+
+    
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+{% if status %}
+    <script>
+        alert("{{status}}");
+    </script>
+{% endif %}
+<script>
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signInButton.addEventListener('click', () => {
+  container.classList.remove('right-panel-active');
+});
+
+</script>
+
+</html>

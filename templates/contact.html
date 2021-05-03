@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT US</title>
+    <link rel="stylesheet" href="/static/index.css"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="sub-header2">
+        <nav>
+            <a href="index.html"><img src="/static/images/LOGOO.jpg"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" ></i>
+                <ul>
+                    <li><a href="{% url 'index' %}" >HOME</a></li>
+                    <li><a href="{% url 'about' %}" >ABOUT</a></li>
+                    <li><a href="{% url 'faq' %}" >FAQ</a></li>
+                    <li><a href="{% url 'contact' %}" >CONTACT US</a></li>
+                    <li><a href="{% url 'reg'%}"><button type="submit" class="hero-btn red-btn">Sign In</button></a></li>
+                    <li><a href="{% url 'user_login' %}"><button type="submit" class="hero-btn red-btn">Login</button></a></li>
+                </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Contact Us</h1>
+    </section>
+    <section class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14294.575108999257!2d75.8750644!3d26.4026939!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4776f298b0f0587e!2sBanasthali%20University!5e0!3m2!1sen!2sin!4v1618039568855!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <section class="contactus">
+        <div class="row">
+            <div class="contactinfo">
+                <div>
+                    <i class="fa fa-home"></i>
+                    <span>
+                        <h5> XYZ Road, ABC Builiding</h5>
+                        <p> Banasthali Vidhyapeeth, Rajasthan</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <span>
+                        <h5> +1 0123456789</h5>
+                        <p> Mondy to Saturday, 10AM to 6PM</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <span>
+                        <h5>info@hypeitquery.com</h5>
+                        <p> Email us your queries</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contactinfo">
+               <h3> Have any questions? We'd love to hear from you. </h3>
+                <form action="" method="POST">
+                {% csrf_token %}
+                    <input type="text" class="form-control" name="name" placeholder="Enter Name...">
+                    <input type="text" class="form-control" name="contact" placeholder="Enter Contact Number...">
+                    <input type="email" placeholder="Enter your email"required>
+                    <input type="text" class="form-control" name="subject" placeholder="Enter Subject...">
+                    <input type="text" name="message" placeholder="Message"required> 
+                    <button type="submit" class="hero-btn red-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="endgame">
+            <div class="end war1">
+            <h4>About Us</h4>
+            <p> Our networking website will connect content creators 
+                with organisations to create mutual beneficial opportunities. 
+                Instead of simply being just a stay connected website, 
+                <br>
+                it will help content creators find work and the organisations 
+                can find ideal advertisers for brand recognition and to promote brand loyalty.</p>
+                <ul class="icons">
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div class="end war2">
+            <h4>Quick Links</h4>
+              <ul>
+                    <li><a href="{% url 'index' %}" >HOME</a></li>
+                    <li><a href="{% url 'about' %}" >ABOUT</a></li>
+                    <li><a href="{% url 'faq' %}" >FAQ</a></li>
+                    <li><a href="{% url 'contact' %}" >CONTACT US</a></li>
+                  
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+        </div>
+        </section>
+        <div class="copyright">
+            <p>Copyright Ⓒ 2021 HypeIt. All Rights Reserved.</p>
+        </div>
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right ="0";
+    }
+    function hideMenu(){
+        navLinks.style.right ="-200";
+    }
+    {% if thank %}
+    alert('Thanks for contacting us. We will get back to you soon!');
+
+    document.location = "/contact";
+    {% endif %}
+
+</script>
+</body>
+</html>

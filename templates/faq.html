@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="/static/index.css"> 
+
+    <link rel="stylesheet" href="/static/faq.css">
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$(".accordion_body .li_qus").click(function() {
+    $(this).parent().toggleClass("active");
+     });   
+	})
+	</script>
+</head>
+
+
+<body>
+<nav id="navbar">
+            <a href="/"><img src="/static/images/LOGOO.jpg"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" ></i>
+                <ul>
+                    <li><a style="color:orange;" href="{% url 'index' %}" >HOME</a></li>
+                    <li><a style="color:orange;"  href="{% url 'about' %}" >ABOUT</a></li>
+                    <li><a style="color:orange;"  href="{% url 'faq' %}" >FAQ</a></li>
+                    <li><a style="color:orange;"  href="{% url 'contact' %}" >CONTACT US</a></li>
+                    <li><a href="{% url 'reg'%}"><button type="submit" class="hero-btn red-btn">Sign In</button></a></li>
+                    <li><a href="{% url 'user_login' %}"><button type="submit" class="hero-btn red-btn">Login</button></a></li>
+                </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+	<div class="wrapper">
+		<div class="accordion_container">
+			<div class="accordion_header">
+				FAQs 
+			</div>
+			<div class="accordion_body">
+				<ul>
+					<li>
+						<div class="li_qus">
+							<div class="btn"></div>
+							<p>What projects can be done on HYPEIT? </p>
+						</div>
+						<div class="li_ans">
+							Collaborations related to affiliated and influencer marketing are promoted through our platform.
+							Collaborations between individual content creators is also encouraged.
+						</div>
+					</li>
+					<li>
+						<div class="li_qus">
+							<div class="btn"></div>
+							<p>Is there any comission fee to platform while having a deal ? </p>
+						</div>
+						<div class="li_ans">
+							No, Hypeit doesn't takes any comission fee as of now.
+						</div>
+					</li>
+					<li>
+						<div class="li_qus">
+							<div class="btn"></div>
+							<p>How can I cancel a deal?</p>
+						</div>
+						<div class="li_ans">
+							You have to request the collab cancellation from the other party. Mentioning a valid reason is mandatory. 
+							Platform has no responnsibility about cancellation of deals. But more cancellation would decrease your rating.
+						</div>
+					</li>
+					<li>
+						<div class="li_qus">
+							<div class="btn"></div>
+							<p>What URLs can I use in my profile or Gig description? </p>
+							</div>
+							<div class="li_ans">
+								The following URLs may be used in your profile or Gig description:
+								<ul  style="margin-left:10px;">
+								<b>-> Your blog Link</b><br>
+								<b>-> Video content link</b><br>
+								<b>-> Personal website</b><br>
+								<b>-> Featured blogs, such as wikipedia</b><br>
+								<b>-> Social Media Websites</b>
+								</ul>
+						    </div>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<section class="footer">
+        <div class="endgame">
+            <div class="end war1">
+            <h4>About Us</h4>
+            <p> Our networking website will connect content creators 
+                with organisations to create mutual beneficial opportunities. 
+                Instead of simply being just a stay connected website, 
+                <br>
+                it will help content creators find work and the organisations 
+                can find ideal advertisers for brand recognition and to promote brand loyalty.</p>
+                <ul class="icons">
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div class="end war2">
+            <h4>Quick Links</h4>
+              <ul>
+                    <li><a href="{% url 'index' %}" >HOME</a></li>
+                    <li><a href="{% url 'about' %}" >ABOUT</a></li>
+                    <li><a href="{% url 'faq' %}" >FAQ</a></li>
+                    <li><a href="{% url 'contact' %}" >CONTACT US</a></li>
+                  
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+        </div>
+        </section>
+</body>
+</html>

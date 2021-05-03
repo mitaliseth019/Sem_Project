@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_interface',
+    'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     #local
-    'Promoter',
+    'phone_field',
+    'home.apps.HomeConfig',
+    'creator.apps.CreatorConfig',
 
     #allauth
     'allauth',
@@ -147,11 +152,33 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 
 }
+SOCIAL_AUTH_FACEBOOK_KEY = '16...535'
+SOCIAL_AUTH_FACEBOOK_SECRET = '857..4bb9d'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'home'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+SITE_ID = 1
 
-SITE_ID = 2
-LOGIN_REDIRECT_URL = '/'
+STATICFILES_DIRS = [
+   os.path.join(BASE_DIR,'static'),
+]
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEMPLATE_DIR = os.path.join(BASE_DIR,"template")
+
+from home.credentials import password
+
+
+MEDIA_URL ="/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'sachtechsolutionpvtltd@gmail.com'
+EMAIL_HOST_PASSWORD = "YOUR EMAIL   PASSWORD"
+EMAIL_USE_TLS = True

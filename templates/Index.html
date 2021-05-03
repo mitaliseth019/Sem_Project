@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HypeIt</title>
+    <link rel="stylesheet" href="/static/index.css"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="/static/images/LOGOO.jpg"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" ></i>
+                <ul>
+                    <li><a href="{% url 'index' %}" >HOME</a></li>
+                    <li><a href="{% url 'about' %}" >ABOUT</a></li>
+                    <li><a href="{% url 'faq' %}" >FAQ</a></li>
+                    <li><a href="{% url 'contact' %}" >CONTACT US</a></li>
+                    <li><a href="{% url 'reg'%}"><button type="submit" class="hero-btn red-btn">Sign In</button></a></li>
+                    <li><a href="{% url 'user_login' %}"><button type="submit" class="hero-btn red-btn">Login</button></a></li>
+                </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Hire the best talent for any job, online.</h1>
+            <p>
+                Great advertising makes good food taste good food
+                taste better.It makes cars run better. It changes
+                the perception of everything.
+                <br>
+                The right name is an advertisement in itself.
+            </p>
+            <a href="" class="hero-btn">Be the Brand Ambassador</a>
+            <a href="{% url 'reg'%}" class="hero-btn">Find your Brand Ambassador here</a>
+        </div>
+        <div class="wavey">
+            <div class="wave"></div>
+        </div>
+        <!--
+        <div class="clouds">
+            <img src="images/cloud1.png" style="--i:1">
+            <img src="images/cloud2.png" style="--i:2">
+            <img src="images/cloud3.png" style="--i:3">
+            <img src="images/cloud4.png" style="--i:4">
+            <img src="images/cloud5.png" style="--i:5">
+            <img src="images/cloud1.png" style="--i:10">
+            <img src="images/cloud2.png" style="--i:9">
+            <img src="images/cloud3.png" style="--i:8">
+            <img src="images/cloud4.png" style="--i:7">
+            <img src="images/cloud5.png" style="--i:6">
+        </div>
+        -->
+    </section>
+    <section class="work">
+        <h1> Need Something done?</h1>
+        <p>Develop trusted relationships and build your own virtual talent 
+            bench for quick project turnarounds or big transformations/</p>
+            <div class="row">
+                <div class="square">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <div class="content">
+                        <h2> Promote Anything</h2>
+                        <p>It's easy. Simply post about your product/company and receive competitive bids from content creators within minutes. </p>
+                    </div>
+                </div>
+                <div class="square">
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <div class="content">
+                       <h2> Find your Promotor </h2>
+                       <p>Whatever your needs, there will be a content creator to get it done. </p>
+                   </div>
+               </div>
+               <div class="square">
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <div class="content">
+                       <h2> Let us find what's best for you.</h2>
+                       <p>We'll scan your profile and look for best options available for you.</p>
+                   </div>
+               </div>
+           </div>
+    </section>
+        <section class="features">
+                <h1>What's so great about this website?</h1>
+                <p>We provide our users with many features</p>
+                <div class="container">
+                    <div class="card">
+                        <div class="contents">
+                            <h2>Browse Profiles</h2>
+                            <p>Find professionals you can trust by browsing their samples of previous work and reading their profile reviews.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contents">
+                            <h2>Pay for Quality</h2>
+                            <p>Pay for work when it has been completed and you're 100% satisfied. </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="contents">
+                            <h2>Track Progress</h2>
+                            <p>Keep up-to-date and on-the-go with our time tracker.</p>
+                        </div>
+                    </div>
+                  
+                    <div class="card">
+                        <div class="contents">
+                            <h2>24/7 Support</h2>
+                            <p>We're always here to help. Our support consists of real people who are available 24/7.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+    <section class="type">
+        <h1>What is your field of expertise?</h1>
+        <p>There are many different types of blogs covering a wide range of topics, interests, and audiences.
+            <br>
+            For a successful blog, you need to plan ahead and choose the niche that works for you.</p>
+        <div class="row">
+            <div class="holder">
+                <div class="pack">
+                    <div class="imgpack">
+                        <img src="/static/images/art.jpg">
+                    </div>
+                    <div class="details">
+                        <div class="info">
+                        <h2>Art</h2>
+                        <p>An art blog is a common type of blog that comments on art.
+                            Art blogs may also serve as a forum to reach out to anybody
+                         interested in art – be it painting, sculpture,
+                         creative photography, or new media.</p>
+                    </div>    
+                    </div>
+                </div>
+                <div class="pack">
+                    <div class="imgpack">
+                        <img  src="http://st.depositphotos.com/1491329/2998/i/450/depositphotos_29984991-Beauty-Fashion-Girl-Portrait.-Vintage-Style-Girl-Wearing-Gloves.jpg">
+                    </div>
+                    <div class="details">
+                        <div class="info">
+                        <h2>Fashion</h2>
+                        <p>A fashion blog can cover many things such as specific items of clothing and accessories, beauty tips, trends in various apparel markets ,
+                             celebrity fashion choices and street fashion trends.</p>
+                    </div>    
+                    </div>
+                </div>
+                <div class="pack">
+                    <div class="imgpack">
+                        <img style="height: 300px;" src="/static/images/finance.jpg">
+                    </div>
+                    <div class="details">
+                        <div class="info">
+                        <h2>Tech</h2>
+                        <p>Technical blogging is a great way to share your expertise while building a potentially valuable readership. It can help you to 
+                        document projects, or provide guidance to other web users.</p>
+                    </div>    
+                    </div>
+                </div>
+                <div class="pack">
+                    <div class="imgpack">
+                        <img style="height: 300px;" src="/static/images/fitness.jpg">
+                    </div>
+                    <div class="details">
+                        <div class="info">
+                        <h2>Fitness</h2>
+                        <p>A fitness blog is an online tool that lets you share your best advice, information, and expertise about fitness.It includes 'how-to' instructional posts, fitness club news,
+                             interesting training techniques, and nutrition tips, and more.</p>
+                    </div>    
+                    </div>
+                </div>
+                <div class="pack">
+                    <div class="imgpack">
+                        <img src="/static/images/book.jpg">
+                    </div>
+                    <div class="details">
+                        <div class="info">
+                        <h2>Book</h2>
+                        <p>A book blog will help you reach a large audience and it's a great way to share awesome books, as well as create a 
+                        community of like-minded individuals who also love to read.</p>
+                    </div>    
+                    </div>
+                </div>
+                <div class="pack">
+                    <div class="imgpack">
+                        <img style="height: 300px;" src="/static/images/lifestyle.jpg">
+                    </div>
+                    <div class="details">
+                        <div class="info">
+                        <h2>Lifestyle</h2>
+                        <p>A lifestyle blogger creates content inspired and 
+                            curated by their personal interests and daily activities.</p>
+                    </div>    
+                    </div>
+                </div>
+                <div class="pack">
+                    <div class="imgpack">
+                        <img style="height: 300px;" src="/static/images/music.jpg">
+                    </div>
+                    <div class="details">
+                        <div class="info">
+                        <h2>Music</h2>
+                        <p>A Music Blogger writes breaking music news 
+                            stories to be posted on an online music blog.</p>
+                    </div>    
+                    </div>
+                </div>
+                <div class="pack">
+                    <div class="imgpack">
+                        <img style="height: 300px;" src="/static/images/sport.jpg">
+                    </div>
+                    <div class="details">
+                        <div class="info">
+                        <h2>Sport</h2>
+                        <p>Sports blogs allow fans of a given sport to share sporting news and opinions on sports-related topics, and could help 
+                        lead to a career in sports journalism or game analysis.</p>
+                    </div>    
+                    </div>
+                </div>
+                <div class="pack">
+                    <div class="imgpack">
+                        <img style="height: 300px;" src="/static/images/travel.jpg">
+                    </div>
+                    <div class="details">
+                        <div class="info">
+                        <h2>Travel</h2>
+                        <p>Travel bloggers are storytellers.Travel blogs introduce 
+                        you to places, activities and adventures you didn't even know existed. </p>
+                    </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <section class="comments">
+            <h1>
+                What our Users Says
+            </h1>
+            <p>
+                For nearly 9 in 10 consumers, an online review is as important 
+                as a personal recommendation. 
+                <br>
+                Customers are likely to spend 31% 
+                more on a business with “excellent” reviews.
+            </p>
+            <div class="row">
+                <div class="comment-col">
+                    <img src="/static/images/user1.jpg">
+                <div>
+                <p>
+                    Totally loving this webapp! It helped me build connections and get recognition.
+                </p>
+                <h3>Minny Mouse</h3>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="comment-col">
+            <img src="/static/images/user2.jpg">
+        <div>
+        <p>
+            This webapp opened so many new doors for me. I never realised what I did on social media can make me earn money!
+        </p>
+        <h3>Mickey Mouse</h3>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+    </div>
+</div>
+        </section>
+        <section class="register">
+            <h1>
+                Want to know more about us?
+            </h1>
+            <a href="" class="hero-btn">Learn More</a>
+        </section>
+<section class="footer">
+        <div class="endgame">
+            <div class="end war1">
+            <h4>About Us</h4>
+            <p> Our networking website will connect content creators 
+                with organisations to create mutual beneficial opportunities. 
+                Instead of simply being just a stay connected website, 
+                <br>
+                it will help content creators find work and the organisations 
+                can find ideal advertisers for brand recognition and to promote brand loyalty.</p>
+                <ul class="icons">
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+        <div class="end war2">
+            <h4>Quick Links</h4>
+              <ul>
+                    <li><a href="{% url 'index' %}" >HOME</a></li>
+                    <li><a href="{% url 'about' %}" >ABOUT</a></li>
+                    <li><a href="{% url 'faq' %}" >FAQ</a></li>
+                    <li><a href="{% url 'contact' %}" >CONTACT US</a></li>
+                  
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+        </div>
+        </section>
+        <div class="copyright">
+            <p>Copyright Ⓒ 2021 HypeIt. All Rights Reserved.</p>
+        </div>
+<script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right ="0";
+    }
+    function hideMenu(){
+        navLinks.style.right ="-200px";
+    }
+    {% if status %}
+        alert("{{status}}");
+        window.location="/"
+{% endif %}
+</script>
+</body>
+</html>
