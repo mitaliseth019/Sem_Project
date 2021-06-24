@@ -1,6 +1,6 @@
 from django.contrib import admin
 from home.models import (Contact,
-register_table)
+Profile)
 
 admin.site.site_header="My Website | Second Project"
 
@@ -19,4 +19,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Contact,Contact_UsAdmin)
 
-admin.site.register(register_table)
+admin.site.register(Profile)

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from .models import Contact, register_table
+from .models import Contact, Profile
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
@@ -19,6 +19,14 @@ def aboutpage(request):
 def faqpage(request):
 
     return render(request,"faq.html")
+
+def inbox(request):
+
+    return render(request,"inbox.html")
+
+def request(request):
+
+    return render(request,"request.html")
 
 def contactpage(request):
     thank = False
@@ -61,7 +69,7 @@ def register(request):
         
         usr.save()
 
-        reg = register_table(user=usr, contact_number=con)
+        reg = Profile(user=usr, contact_number=con)
         reg.save()
         return render(request,"signin.html",{"status":"{} your Account created Successfully".format(fname)})
     return render(request,"register.html")
@@ -101,12 +109,25 @@ def user_login(request):
 
 @login_required
 def cust_dashboard(request):
+    
     context = {}
-    check = register_table.objects.filter(user__id=request.user.id)
+    check = Profile.objects.filter(user__id=request.user.id)
     if len(check)>0:
-        data = register_table.objects.get(user__id=request.user.id)
+        data = Profile.objects.get(user__id=request.user.id)
         context["data"] = data
     return render(request,"cust_dashboard.html",context)
+
+@login_required
+def profile(request,username=None):
+    user =  get_object_or_404(User,username=username)
+
+    context = {
+        'user_id':user,
+
+    }
+    template_name = 'profile.html'
+
+    return render(request, template_name, context)
 
 @login_required
 def seller_dashboard(request):
@@ -122,9 +143,9 @@ def user_logout(request):
 
 def edit_profile(request):
     context = {}
-    check = register_table.objects.filter(user__id=request.user.id)
+    check = Profile.objects.filter(user__id=request.user.id)
     if len(check)>0:
-        data = register_table.objects.get(user__id=request.user.id)
+        data = Profile.objects.get(user__id=request.user.id)
         context["data"]=data    
     if request.method=="POST":
         fn = request.POST["fname"]
@@ -172,9 +193,9 @@ def edit_profile(request):
 
 def change_password(request):
     context={}
-    ch = register_table.objects.filter(user__id=request.user.id)
+    ch = Profile.objects.filter(user__id=request.user.id)
     if len(ch)>0:
-        data = register_table.objects.get(user__id=request.user.id)
+        data = Profile.objects.get(user__id=request.user.id)
         context["data"] = data
     if request.method=="POST":
         current = request.POST["cpwd"]
@@ -232,3 +253,37 @@ def reset_password(request):
             return JsonResponse({"status":"error","email":user.email})
     except:
         return JsonResponse({"status":"failed"})
+
+#def sendcompany(request):
+#    if request.method=="POST":
+#        name = request.POST["name"]
+ #       context={"name":name}
+#        res = register_table.objects.all()
+#        for i in res:
+#            if i.cat1=="food":
+#                i.job = name
+#            i.save()
+#    return render(request,"company.html")
+
+def search(request):
+    message = ""
+    
+    if request.method == 'POST':
+        
+        search_input = request.POST.get('search')
+        print(search_input)
+        users = User.objects.filter(Q(username__iexact=search_input))
+        if  len(users)==0:
+            message = "No results found for: "+search_input
+            context = {'message':message,'search_input':search_input}
+            return render(request,'browse.html',context)
+    
+        # 3rd condition : post-no , users-yes
+        elif users.count()>0:
+            context = {'users':users,'search_input':search_input}
+            return render(request,'browse.html',context)
+        
+            # 4th condition : post:yes , user: yes
+
+    return render(request,'browse.html')
+    
