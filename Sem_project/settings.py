@@ -26,7 +26,7 @@ SECRET_KEY = 't)v=m9$41)z=4=r$kbh#$5z^9@4#c@u174py_8uds%zw7hsmfx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     #local
+    'crispy_forms',
     'phone_field',
     'home.apps.HomeConfig',
     'creator.apps.CreatorConfig',
@@ -162,7 +163,7 @@ LOGIN_REDIRECT_URL = 'home'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-SITE_ID = 1
+SITE_ID = 2
 
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR,'static'),

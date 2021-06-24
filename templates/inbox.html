@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Inbox | HypeIt</title>
+  <link rel="stylesheet" href="/static/dashboard.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="top_nav">
+        <div class="left">
+          <div class="logo"><a  href="index.html"><p><img src="/static/images/LOGOO.jpg"></p></a></div>
+      </div> 
+      <div class="right">
+        <div class="user">
+          <a href="#">
+          <img src="images/user1.jpg">
+        </a>
+      </div>
+      </div>
+    </div>
+  <div class="nab-bar">
+  <div class="wrap">
+    <div class="nav">
+      <ul>
+        <a href="{% url 'cust_dashboard' %}"><li>Dashboard</li></a>
+        <a href="{% url 'request' %}"><li>Requests</li></a>
+        <a href="{% url 'inbox' %}"><li>Inbox</li></a>
+        <a href="#"><li>Browse</li></a>
+      </ul>
+    </div>
+  </div>
+  </div>
+  <div class="dashboard">
+    <div class="wrapperr">
+        <div class="container">
+            <div class="left">
+                <div class="top">
+                    <input type="text" placeholder="Search" />
+                    <a href="javascript:;" class="search"></a>
+                </div>
+                <ul class="people">
+                    <li class="person" data-chat="person2">
+                        <img src="images/img2.jpg" alt="" />
+                        <span class="name">Connell Waldron</span>
+                        <span class="time">1:44 PM</span>
+                        <span class="preview">It's not like this with other people</span>
+                    </li>
+                    <li class="person" data-chat="person3">
+                        <img src="images/img3.jpg" alt="" />
+                        <span class="name">Marianne Sheridan</span>
+                        <span class="time">2:09 PM</span>
+                        <span class="preview">I Wasn't Aware That My Eye Line Fell Under The Jurisdiction Of School Rules.</span>
+                    </li>
+                    <li class="person" data-chat="person4">
+                        <img src="images/img4.jpg" alt="" />
+                        <span class="name">Ross Geller</span>
+                        <span class="time">2:09 PM</span>
+                        <span class="preview">Try 65 million year ago!</span>
+                    </li>
+                    <li class="person" data-chat="person5">
+                        <img src="images/img5.jpg" alt="" />
+                        <span class="name">Monica Bing</span>
+                        <span class="time">2:09 PM</span>
+                        <span class="preview">NO SIR NO!</span>
+                    </li>
+                    <li class="person" data-chat="person6">
+                        <img src="images/img8.jpg" alt="" />
+                        <span class="name">Joey Tribbiani</span>
+                        <span class="time">2:09 PM</span>
+                        <span class="preview">"Hey..How you doing?"</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="top"><span>To: <span class="name">Connell Waldron</span></span></div>
+                <div class="chat" data-chat="person2">
+                    <div class="conversation-start">
+                        <span>Today, 5:38 PM</span>
+                    </div>
+                    <div class="bubble you">
+                        Hello, can you hear me?
+                    </div>
+                    <div class="bubble you">
+                        I'm here in Trinity.
+                    </div>
+                    <div class="bubble me">
+                        Oh Great. When are you free?
+                    </div>
+                    <div class="bubble me">
+                        We should catch up. It's been a long time.
+                    </div>
+                    <div class="bubble you">
+                        Tommorrow?
+                    </div>
+                    <div class="bubble you">
+                        It's not like this with other people.
+                    </div>
+                </div>
+                <div class="chat" data-chat="person3">
+                    <div class="conversation-start">
+                        <span>Today, 3:38 AM</span>
+                    </div>
+                    <div class="bubble me">
+                        Why were you at detention today?
+                    </div>
+                    <div class="bubble me">
+                        I was surprised to see you there.
+                    </div>
+                    <div class="bubble you">
+                        Wasn't paying attention in the class.
+                    </div>
+                    <div class="bubble you">
+                        Wasn't Aware That My Eye Line Fell Under The Jurisdiction Of School Rules.
+                    </div>
+                </div>
+                <div class="chat" data-chat="person4">
+                    <div class="conversation-start">
+                        <span>Yesterday, 4:20 PM</span>
+                    </div>
+                    <div class="bubble me">
+                        Hey human!
+                    </div>
+                    <div class="bubble you">
+                        Do you what happened at work today?
+                    </div>
+                    <div class="bubble me">
+                        A dinosaur died a million years ago
+                    </div>
+                    <div class="bubble you">
+                        Try 65 million years ago! And then try..
+                    </div>
+                </div>
+                <div class="chat" data-chat="person5">
+                    <div class="conversation-start">
+                        <span>Today, 6:28 AM</span>
+                    </div>
+                    <div class="bubble me">
+                        Monica, how did this happen?
+                    </div>
+                    <div class="bubble me">
+                        I thought you had this all palnned out.
+                    </div>
+                    <div class="bubble you">
+                        Do you want me to cry? Is thay what you want? <br />YOU WANT TO SEE ME CRY??
+                    </div>
+                    <div class="bubble me">
+                        NO SIR NO!
+                    </div>
+                    </div>
+                <div class="chat" data-chat="person6">
+                    <div class="conversation-start">
+                        <span>Monday, 1:27 PM</span>
+                    </div>
+                    <div class="bubble me">
+                        How do you get all the girls?
+                    </div>
+                    <div class="bubble you">
+                        What I do is, I look a woman up and down and I say:
+                    </div>
+                    <div class="bubble you">
+                        "Hey..How you doing?"
+                    </div>
+                </div>
+                <div class="write">
+                    <a href="javascript:;" class="write-link attach"></a>
+                    <input type="text" />
+                    <a href="javascript:;" class="write-link smiley"></a>
+                    <a href="javascript:;" class="write-link send"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+      <script  src="/static/inbox.js"></script>
+    </body>
+    </html>
