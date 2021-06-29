@@ -4,12 +4,53 @@
 
 <style>
  
+<<<<<<< HEAD
  
 .form{
     margin-bottom: 20px;
     margin-left: 30px;
 }
 
+=======
+    .form-group {
+        margin-bottom: 1rem;
+
+        width: 500px;
+    }
+    
+    * {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+.container-fluid {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+>>>>>>> f77854167c89ab14cd9775b56c8a053dfa31446e
 </style>
 {% endblock %}
 {% block dashboard %}
@@ -17,12 +58,17 @@
     <div class="row">
 
             
+<<<<<<< HEAD
             <form action="" method="post" class="form" enctype="multipart/form-data" style="margin-bottom: 100px;">
+=======
+            <form action="" method="post" enctype="multipart/form-data" style="margin-bottom: 100px;">
+>>>>>>> f77854167c89ab14cd9775b56c8a053dfa31446e
                 {% csrf_token %}
               
                 {% if status %}
                 <div class="alert alert-primary">{{status}}</div>
                 {% endif %}
+<<<<<<< HEAD
                 <div  style="margin-left: 20%; width: 900px; ">
                   <div class="text-center">
                 {% if data.image %}
@@ -30,6 +76,15 @@
                 {% else %}
                 <img src="{% static 'images/guestuser.jpg' %}"
                     style="margin-left:20%; margin-bottom: 20px; height:150px;width:150px;border-radius:50%">
+=======
+                <div class="form-group" style="margin-left: 20%; width: 500px; ">
+                  <div class="text-center">
+                {% if data.profile_pic %}
+                <img src="/media/{{data.profile_pic}}" style="height:150px;width:150px;border-radius:50%">
+                {% else %}
+                <img src="{% static 'images/guestuser.jpg' %}"
+                    style="margin-left:20%; height:150px;width:150px;border-radius:50%">
+>>>>>>> f77854167c89ab14cd9775b56c8a053dfa31446e
                 {% endif %}
             </div>
                     <div class="row">
@@ -130,8 +185,13 @@
                          >{{data.about}}</textarea>
                 </div>
                 
+<<<<<<< HEAD
                 <div class="form-group"  style="margin-left: 20%; width: 500px; margin-right: 20px;">
                     <input type="submit" name="changeprofile"   style="margin-top:20px; margin-right: 20px;" value="Save Changes" class="btn btn-primary"
+=======
+                <div class="form-group" style="margin-left: 10%; width: 500px;">
+                    <input type="submit" name="changeprofile" value="Save Changes" class="btn btn-primary"
+>>>>>>> f77854167c89ab14cd9775b56c8a053dfa31446e
                         style="width:50%;border-radius:20px;">
                 </div>
 

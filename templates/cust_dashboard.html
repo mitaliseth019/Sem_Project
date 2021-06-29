@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 {% load static %}
 <html lang="en" >
@@ -228,4 +229,222 @@
 </div>
 </div>  
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | HypeIt</title>
+  <link rel="stylesheet" href="/static/dashboard.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="top_nav">
+        <div class="left">
+          <div class="logo"><a  href="index.html"><p><img src="/static/images/LOGOO.jpg"></p></a></div>
+      </div> 
+      <div class="right">
+        <div class="user">
+          <a href="{% url 'profile' request.user.username %}">
+          <img src="/static/images/user1.jpg">
+        </a>
+      </div>
+      </div>
+    </div>
+  <div class="nab-bar">
+  <div class="wrap">
+    <div class="nav">
+      <ul>
+        <a href="Dashboard.html"><li>Dashboard</li></a>
+        <a href="{% url 'request' %}"><li>Requests</li></a>
+        <a href="{% url 'inbox' %}"><li>Inbox</li></a>
+        <a href="#"><li>Browse</li></a>
+      </ul>
+    </div>
+  </div>
+  </div>
+  <div class="dashboard">
+    <div class="cardbox-box">
+  <div class="cardBox">
+    <div class="card">
+        <div>
+            <div class="numbers">1,498</div>
+            <div class="cardName">Views</div>
+        </div>
+        <div class="iconBox">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="card">
+        <div>
+            <div class="numbers">89</div>
+            <div class="cardName">Reviews</div>
+        </div>
+        <div class="iconBox">
+            <i class="fa fa-line-chart" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="card">
+        <div>
+            <div class="numbers">67</div>
+            <div class="cardName">My Projects</div>
+        </div>
+        <div class="iconBox">
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="card">
+        <div>
+            <div class="numbers">Rs. 12,345</div>
+            <div class="cardName">Ledger</div>
+        </div>
+        <div class="iconBox">
+            <i class="fa fa-credit-card" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+</div>
+<div class="project-details">
+<div class="details">
+    <div class="recentProjects">
+        <div class="cardHeader">
+            <h2>Recent Project</h2>
+            <a href="#" class="btn">View All</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Mode</td>
+                    <td>Payment</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Slice</td>
+                    <td>1,500</td>
+                    <td>Post</td>
+                    <td><span class="Pay Paid">Paid</span></td>
+                </tr>
+                <tr>
+                    <td>Myntra</td>
+                    <td>3,000</td>
+                    <td>Post,Story,Video</td>
+                    <td><span class="Pay Due">Due</span></td>
+                </tr>
+                <tr>
+                    <td>Groww</td>
+                    <td>2,000</td>
+                    <td>Post,Story</td>
+                    <td><span class="Pay Paid">Paid</span></td>
+                </tr>
+                <tr>
+                    <td>Zimave</td>
+                    <td>4,000</td>
+                    <td>Post,Story,Video</td>
+                    <td><span class="Pay Due">Due</span></td>
+                </tr>
+                <tr>
+                    <td>Unacademy</td>
+                    <td>2,000</td>
+                    <td>Post,Story</td>
+                    <td><span class="Pay Paid">Paid</span></td>
+                </tr>
+                <tr>
+                    <td>Lenovo</td>
+                    <td>6,000</td>
+                    <td>Post,Story,Video</td>
+                    <td><span class="Pay Paid">Paid</span></td>
+                </tr>
+                <tr>
+                    <td>Pestige Cooker</td>
+                    <td>1,000</td>
+                    <td>Story</td>
+                    <td><span class="Pay Paid">Paid</span></td>
+                </tr>
+                <tr>
+                    <td>Whisper</td>
+                    <td>2,000</td>
+                    <td>Post,Story</td>
+                    <td><span class="Pay Due">Due</span></td>
+                </tr>
+                <tr>
+                    <td>Faber castell</td>
+                    <td>1,000</td>
+                    <td>Story</td>
+                    <td><span class="Pay Due">Due</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="promoReq">
+        <div class="cardHeader">
+            <h2>Promotional Requests</h2>
+        </div>
+        <table>
+            <tbody>
+                <tr>
+                    <td width="60px"><div class="imgBox"><img src="images/img1.jpg"></div></td>
+                    <td><span class="name"><h4>Naina Majumdar<br></h4>New Delhi</span></td>
+                    <td><span class="bttn-a">Accept</span></td>
+                    <td><span class="bttn-r">Reject</span></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBox"><img src="images/img2.jpg"></div></td>
+                    <td><span class="name"><h4>Mitali Seth<br></h4>Varanasi</span></td>
+                    <td><span class="bttn-a">Accept</span></td>
+                    <td><span class="bttn-r">Reject</span></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBox"><img src="images/img3.jpg"></div></td>
+                    <td><span class="name"><h4>Ishita<br></h4>Allahabad</span></td>
+                    <td><span class="bttn-a">Accept</span></td>
+                    <td><span class="bttn-r">Reject</span></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBox"><img src="images/img4.jpg"></div></td>
+                    <td><span class="name"><h4>Ismriti Gupta<br></h4>Jaipur</span></td>
+                    <td><span class="bttn-a">Accept</span></td>
+                    <td><span class="bttn-r">Reject</span></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBox"><img src="images/img5.jpg"></div></td>
+                    <td><span class="name"><h4>John <br></h4>Srinagar</span></td>
+                    <td><span class="bttn-a">Accept</span></td>
+                    <td><span class="bttn-r">Reject</span></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBox"><img src="images/img6.jpg"></div></td>
+                    <td><span class="name"><h4>Monica<br></h4>Dehradoon</span></td>
+                    <td><span class="bttn-a">Accept</span></td>
+                    <td><span class="bttn-r">Reject</span></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBox"><img src="images/img7.jpg"></div></td>
+                    <td><span class="name"><h4>Alisha<br></h4>Bangalore</span></td>
+                    <td><span class="bttn-a">Accept</span></td>
+                    <td><span class="bttn-r">Reject</span></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBox"><img src="images/img8.jpg"></div></td>
+                    <td><span class="name"><h4>Chandler<br></h4>Varanasi</span></td>
+                    <td><span class="bttn-a">Accept</span></td>
+                    <td><span class="bttn-r">Reject</span></td>
+                </tr>
+                <tr>
+                    <td width="60px"><div class="imgBox"><img src="images/img9.jpg"></div></td>
+                    <td><span class="name"><h4>Joey<br></h4>Kolkata</span></td>
+                    <td><span class="bttn-a">Accept</span></td>
+                    <td><span class="bttn-r">Reject</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+</div>  
+</body>
+>>>>>>> f77854167c89ab14cd9775b56c8a053dfa31446e
 </html>
