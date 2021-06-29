@@ -1,10 +1,14 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>Dashboard | HypeIt</title>
   <link rel="stylesheet" href="/static/dashboard.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+
+  </style>
 </head>
 <body>
 <div class="wrapper">
@@ -12,14 +16,23 @@
         <div class="left">
           <div class="logo"><a  href="index.html"><p><img src="/static/images/LOGOO.jpg"></p></a></div>
       </div> 
+      <a style="margin-left: 65%; margin-right: -2%;" href="{% url 'edit_profile' %}">Edit Profile</a>
+        <a href="{% url 'user_logout' %}" >Logout</a>
       <div class="right">
         <div class="user">
           <a href="{% url 'profile' request.user.username %}">
-          <img src="/static/images/user1.jpg">
+          {% if data.image %}
+                    <img src="/media/{{data.image}}" >
+            {% else %}
+            <img src="{% static 'images/guestuser.jpg' %}">
+            {% endif %}
         </a>
+        
       </div>
       </div>
+      
     </div>
+    
   <div class="nab-bar">
   <div class="wrap">
     <div class="nav">
@@ -27,7 +40,8 @@
         <a href="Dashboard.html"><li>Dashboard</li></a>
         <a href="{% url 'request' %}"><li>Requests</li></a>
         <a href="{% url 'inbox' %}"><li>Inbox</li></a>
-        <a href="#"><li>Browse</li></a>
+        <a href="{% url 'search' %}"><li>Browse</li></a>
+        
       </ul>
     </div>
   </div>

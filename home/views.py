@@ -9,7 +9,15 @@ from datetime import datetime
 from django.core.mail import EmailMessage
 
 def index(request):
+    user = request.user
 
+    if user.is_authenticated:
+        context = {}
+        check = Profile.objects.filter(user__id=request.user.id)
+        if len(check)>0:
+            data = Profile.objects.get(user__id=request.user.id)
+            context["data"] = data
+        return render(request,"cust_dashboard.html",context)
     return render(request,"index.html")
 
 def aboutpage(request):
@@ -120,9 +128,9 @@ def cust_dashboard(request):
 @login_required
 def profile(request,username=None):
     user =  get_object_or_404(User,username=username)
-
+    pro = Profile.objects.filter(user__id=user.id)
     context = {
-        'user_id':user,
+        'user_id':user,'pro':pro
 
     }
     template_name = 'profile.html'
@@ -184,7 +192,7 @@ def edit_profile(request):
 
         if "image" in request.FILES:
             img = request.FILES["image"]
-            data.profile_pic = img
+            data.image= img
             data.save()
 
 

@@ -4,42 +4,10 @@
 
 <style>
  
-    .form-group {
-        margin-bottom: 1rem;
-
-        width: 500px;
-    }
-    
-    * {
-  box-sizing: border-box;
-}
-
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-.container-fluid {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+ 
+.form{
+    margin-bottom: 20px;
+    margin-left: 30px;
 }
 
 </style>
@@ -49,67 +17,57 @@ input[type=submit] {
     <div class="row">
 
             
-            <form action="" method="post" enctype="multipart/form-data" style="margin-bottom: 100px;">
+            <form action="" method="post" class="form" enctype="multipart/form-data" style="margin-bottom: 100px;">
                 {% csrf_token %}
               
                 {% if status %}
                 <div class="alert alert-primary">{{status}}</div>
                 {% endif %}
-                <div class="form-group" style="margin-left: 20%; width: 500px; ">
+                <div  style="margin-left: 20%; width: 900px; ">
                   <div class="text-center">
-                {% if data.profile_pic %}
-                <img src="/media/{{data.profile_pic}}" style="height:150px;width:150px;border-radius:50%">
+                {% if data.image %}
+                <img src="/media/{{data.image}}" style="height:150px;margin-bottom: 20px; width:150px;border-radius:50%">
                 {% else %}
                 <img src="{% static 'images/guestuser.jpg' %}"
-                    style="margin-left:20%; height:150px;width:150px;border-radius:50%">
+                    style="margin-left:20%; margin-bottom: 20px; height:150px;width:150px;border-radius:50%">
                 {% endif %}
             </div>
                     <div class="row">
                         <div class="col-md-6">
                             <label>First Name</label>
-                            <input type="text" class="form-control" name="fname" placeholder="Enter First Name"
+                            <input type="text"   name="fname"  style="margin-bottom:20px; margin-right: 20px;" placeholder="Enter First Name"
                                 value="{{user.first_name}}">
                         </div>
                         <div class="col-md-6">
                             <label>Last Name</label>
-                            <input type="text" class="form-control" name="lname" placeholder="Enter Last Name"
+                            <input type="text"    style="margin-bottom:20px; margin-right: 20px;" name="lname" placeholder="Enter Last Name"
                                 value="{{user.last_name}}">
                         </div>
                         <div class="col-md-6">
                             <label>Email</label>
-                            <input type="email" class="form-control" name="email" placeholder="Enter Name"
+                            <input type="email"     style="margin-bottom:20px; margin-right: 20px;" name="email" placeholder="Enter Name"
                                 value="{{user.email}}">
                         </div>
                         <div class="col-md-6">
                             <label>Profile Picture</label>
-                            <input type="file" class="form-control" name="image">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group" style="margin-left: 20%; width: 500px;">
-                    <div class="row">
-                        <div class="col-md-6">
+                            <input type="file"     style="margin-bottom:20px; margin-right: 20px;" name="image">
+                      
                             <label>Contact Number</label>
-                            <input type="text" value="{{data.contact_number}}" class="form-control" name="contact"
+                            <input type="text" value="{{data.contact_number}}"     style="margin-bottom:20px; margin-right: 20px;" name="contact"
                                 placeholder="Enter Contact Number" pattern="[0-9]{10}"
                                 title="Number must contain 10 digits only!!">
                         </div>
                         <div class="col-md-6">
                             <label>Age (in years)</label>
-                            <input type="number" class="form-control" name="age" placeholder="Enter Age" min="15"
+                            <input type="number"   name="age"  style="margin-bottom:20px; margin-right: 20px;" placeholder="Enter Age" min="15"
                                 max="99" value="{{data.age}}">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group" style="margin-left: 20%; width: 500px;">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>City</label>
-                            <input type="text" class="form-control" name="city" placeholder="Enter City"
+                      
+                            <label >City</label>
+                            <input type="text"   name="city"  style="margin-bottom:20px; margin-right: 20px;"   style="margin-bottom:20px; margin-right: 20px;"placeholder="Enter City"
                                 value="{{data.city}}">
                                 <label>Category2</label>
 
-                                <select name="cat2" class="form-control">
+                                <select name="cat2"   style="margin-bottom:20px; margin-right: 20px;">
                                     <option>Choose your field</option>
                                     <option value="fashion">Fashion</option>
                                     <option value="food">Food</option>
@@ -125,7 +83,7 @@ input[type=submit] {
                         <div class="col-md-6">
                             <label>Category1</label>
 
-                            <select name="cat1" class="form-control">
+                            <select name="cat1"    style="margin-bottom:20px; margin-right: 20px;">
                                 <option>Choose your field</option>
                                 <option value="fashion">Fashion</option>
                                 <option value="food">Food</option>
@@ -139,7 +97,7 @@ input[type=submit] {
                             </select>
                             <label>Category3</label>
 
-                            <select name="cat3" class="form-control">
+                            <select name="cat3"    style="margin-bottom:20px; margin-right: 20px;">
                                 <option>Choose your field</option>
                                 <option value="fashion">Fashion</option>
                                 <option value="food">Food</option>
@@ -152,37 +110,28 @@ input[type=submit] {
                                 <option value="writing">Writing</option>
                             </select>
                         </div>
-                    </div>
-                </div>
-                <div class="form-group" style="margin-left: 20%; width: 500px;">
-                    <div class="row">
-                        <div class="col-md-6">
+                    
                             <label>Youtube Link</label>
-                    <input type="text" class="form-control" placeholder="Enter YouTube Link" name="youtube"
+                    <input type="text"    style="margin-bottom:20px; margin-right: 20px;" placeholder="Enter YouTube Link" name="youtube"
                         value="{{data.youtube}}">
                         </div>
                         <div class="col-md-6">
                             <label>Instagram Link</label>
-                    <input type="text" class="form-control" placeholder="Enter Instagram Link" name="instagram"
+                    <input type="text"    style="margin-bottom:20px; margin-right: 20px;" placeholder="Enter Instagram Link" name="instagram"
                         value="{{data.instagram}}">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group" style="margin-left: 20%; width: 500px;">
+                        
                     <label>Facebook Link</label>
-                    <input type="text" class="form-control" placeholder="Enter facebook Link" name="facebook"
+                    <input type="text"    style="margin-bottom:20px; margin-right: 20px;" placeholder="Enter facebook Link" name="facebook"
                         value="{{data.facebook}}">
                 </div>
                 
-
-                <div class="form-group" style="margin-left: 20%; width: 500px;">
-                    <label>About You</label>
-                    <textarea name="about" placeholder="Write About Yourself"
-                        class="form-control">{{data.about}}</textarea>
+                    <label style="margin-top:-300px; margin-right: 10px;">About You</label>
+                    <textarea name="about"  style="margin-top:8px; margin-right: 20px; height: 50px;" placeholder="Write About Yourself"
+                         >{{data.about}}</textarea>
                 </div>
                 
-                <div class="form-group" style="margin-left: 10%; width: 500px;">
-                    <input type="submit" name="changeprofile" value="Save Changes" class="btn btn-primary"
+                <div class="form-group"  style="margin-left: 20%; width: 500px; margin-right: 20px;">
+                    <input type="submit" name="changeprofile"   style="margin-top:20px; margin-right: 20px;" value="Save Changes" class="btn btn-primary"
                         style="width:50%;border-radius:20px;">
                 </div>
 
