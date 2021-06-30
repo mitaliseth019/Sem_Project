@@ -1,0 +1,1 @@
+web: gunicorn Sem_project.wsgi --log-file -
