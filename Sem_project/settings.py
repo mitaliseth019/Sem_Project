@@ -69,11 +69,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Sem_project.urls'
-
+template_name = "index.html"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS':  [os.path.join(BASE_DIR, 'Templates')],
+        'DIRS':  [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
