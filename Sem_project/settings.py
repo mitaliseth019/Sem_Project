@@ -99,7 +99,7 @@ DATABASES = {
         'CONN_MAX_AGE': 500
     }
 }
-
+SITE_ID = 1
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
