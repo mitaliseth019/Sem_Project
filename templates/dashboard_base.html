@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 {% load static %}
 <html lang="en" >
@@ -42,4 +43,50 @@
   {% block dashboard %}
     {% endblock %}
 </body>
+=======
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | HypeIt</title>
+  <link rel="stylesheet" href="/static/dashboard.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="top_nav">
+        <div class="left">
+          <div class="logo"><a  href="index.html"><p><img src="/static/images/LOGOO.jpg"></p></a></div>
+      </div> 
+      <a style="margin-left: 65%; margin-right: -2%;" href="{% url 'edit_profile' %}">Edit Profile</a>
+        <a href="{% url 'user_logout' %}" >Logout</a>
+      <div class="right">
+        <div class="user">
+          <a href="{% url 'profile' request.user.username %}">
+          {% if data.image %}
+                    <img src="/media/{{data.image}}" >
+            {% else %}
+            <img src="{% static 'images/guestuser.jpg' %}">
+            {% endif %}
+        </a>
+      </div>
+      </div>
+    </div>
+  <div class="nab-bar">
+  <div class="wrap">
+    <div class="nav">
+      <ul>
+        <a href={% url 'cust_dashboard' %}><li>Dashboard</li></a>
+        <a href="{% url 'request' %}"><li>Requests</li></a>
+        <a href="{% url 'inbox' %}"><li>Inbox</li></a>
+        <a href="{% url 'search' %}"><li>Browse</li></a>
+      </ul>
+    </div>
+  </div>
+  </div>
+  {% block dashboard %}
+    {% endblock %}
+</body>
+>>>>>>> 0a30322e6186b7e21e907b5cf7ccf8b1e5eb6cca
 </html>

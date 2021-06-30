@@ -81,3 +81,91 @@
     });
   </script>
 </html>
+<<<<<<< HEAD
+=======
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>company Page</title>
+  </head>
+  <body>
+    <div class="search-form-div">
+      <form method="POST" action="{% url 'search' %}" class="search-form">
+        {% csrf_token %}
+        <input
+          type="text"
+          name="search"
+          class="search-input"
+          placeholder="search username and posts"
+        />
+        <input type="submit" name="" value="Search" class="btn-search" />
+      </form>
+    </div>
+    {% for pro in users %}
+            <div class="d-flex flex-row justify-content-between align-items-center">
+                <div class="d-flex flex-row align-items-center">
+                  <a class="link-style-none" href="{% url 'profile' pro.username %}">
+                    <img class="rounded-circle article-img-search" src="{{pro.profile.image_thumbnail_user.url}}" width="55">
+                  </a>
+                  <div class="d-flex flex-column align-items-start ml-2">
+                    <span>{{ pro.profile.name }}</span>
+                    <a class="link-style-none" href="{% url 'profile' pro.username %}"><span class="font-weight-bold">{{pro.username}}</span></a>
+                  </div>
+                </div>
+                <div class="d-flex flex-row align-items-center mt-2">
+                  {% if pro in user.profile.follows.all %}
+                    <p>following</p>
+                  {% endif %}
+                </div>
+            </div>      
+          {% endfor %}
+        </div>
+
+    {{users}} {% if message %}
+    <div class="resent-posts">
+      <h1 class="resent-posts-heading">{{message}}</h1>
+    </div>
+    {% endif %} {% if users %}
+    <div class="resent-posts">
+      <h1 class="resent-posts-heading">User result:</h1>
+    </div>
+    <div class="content-section-blue">
+      {% for pro in users %}
+      <div class="d-flex flex-row justify-content-between align-items-center">
+        <div class="d-flex flex-row align-items-center">
+          {% url 'profile' pro.username %}
+        </div>
+        <div class="d-flex flex-row align-items-center mt-2">
+          {% if pro in user.profile.follows.all %}
+          <p>following</p>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% endif %}
+
+    <div class="loading" style="display: none">
+      Loading...
+      <br />
+    </div>
+  </body>
+
+  <script>
+    var infinite = new Waypoint.Infinite({
+      element: $(".infinite-container")[0],
+      onBeforePageLoad: function () {
+        $(".loading").show();
+      },
+      onAfterPageLoad: function ($items) {
+        $(".loading").hide();
+      },
+    });
+  </script>
+</html>
+>>>>>>> f77854167c89ab14cd9775b56c8a053dfa31446e
+>>>>>>> 0a30322e6186b7e21e907b5cf7ccf8b1e5eb6cca

@@ -138,40 +138,6 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
-
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'SCOPE': [
-            'profile',
-            'email',
-        ],
-        'AUTH_PARAMS': {
-            'access_type': 'online',
-        }
-    },
-        'facebook': {
-        'LOCALE_FUNC': lambda request: 'en_US'
-    }
-
-}
-SOCIAL_AUTH_FACEBOOK_KEY = '16...535'
-SOCIAL_AUTH_FACEBOOK_SECRET = '857..4bb9d'
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = 'home'
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.1/howto/static-files/
-
-STATIC_URL = '/static/'
-SITE_ID = 2
-
-STATICFILES_DIRS = [
-   os.path.join(BASE_DIR,'static'),
-]
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIR = os.path.join(BASE_DIR,"template")
 
 from home.credentials import password
 
