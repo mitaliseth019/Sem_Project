@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     #local
     'crispy_forms',
     'phone_field',
@@ -73,7 +73,7 @@ ROOT_URLCONF = 'Sem_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS':  [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -153,5 +153,5 @@ EMAIL_HOST_PASSWORD = "YOUR EMAIL   PASSWORD"
 EMAIL_USE_TLS = True
 
 django_heroku.settings(locals())
-STATIC_URL = '/static/ '
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
