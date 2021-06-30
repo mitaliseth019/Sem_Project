@@ -28,7 +28,7 @@ SECRET_KEY = 't)v=m9$41)z=4=r$kbh#$5z^9@4#c@u174py_8uds%zw7hsmfx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["hype-it.herokuapp.com",'']
+ALLOWED_HOSTS = ["hype-it.herokuapp.com",'127.0.0.1']
 
 
 # Application definition
@@ -153,3 +153,5 @@ EMAIL_HOST_PASSWORD = "YOUR EMAIL   PASSWORD"
 EMAIL_USE_TLS = True
 
 django_heroku.settings(locals())
+STATIC_URL = '/static/ '
+STATIC_ROOT = os.join(BASE_DIR,'staticfiles')
