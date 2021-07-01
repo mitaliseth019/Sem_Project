@@ -45,7 +45,7 @@ def contactpage(request):
         msz = request.POST.get("message","")
         email = request.POST.get("email","")
 
-        data = Contact(name=nm,contact_number=con,subject=sub,message=msz, email=email)
+        data = Contact(name=nm,contact=con,subject=sub,message=msz, email=email)
         data.save()
         thank = True
 
@@ -77,7 +77,7 @@ def register(request):
         
         usr.save()
 
-        reg = Profile(user=usr, contact_number=con)
+        reg = Profile(user=usr, contact=con)
         reg.save()
         return render(request,"signin.html",{"status":"{} your Account created Successfully".format(fname)})
     return render(request,"register.html")
@@ -177,7 +177,7 @@ def edit_profile(request):
         usr.email = em
         usr.save()
 
-        data.contact_number = con
+        data.contact = con
         data.age = age
         data.city = ct
         data.youtube = you
