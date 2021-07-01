@@ -7,18 +7,14 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from datetime import datetime
 from django.core.mail import EmailMessage
+import requests
+from importlib import reload
+
 
 def index(request):
-    user = request.user
-
-    if user.is_authenticated:
-        context = {}
-        check = Profile.objects.filter(user__id=request.user.id)
-        if len(check)>0:
-            data = Profile.objects.get(user__id=request.user.id)
-            context["data"] = data
-        return render(request,"cust_dashboard.html",context)
-    return render(request,"index.html")
+    r = requests.get('http://httpbin.org/status/418')
+    print(r.text)
+    return HttpResponse('<pre>' + r.text + '</pre>')
 
 def aboutpage(request):
 
