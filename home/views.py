@@ -12,7 +12,7 @@ from importlib import reload
 
 
 def index(request):
-    r = requests.get('http://httpbin.org/status/418')
+    r = requests.get('index.html')
     print(r.text)
     return HttpResponse('<pre>' + r.text + '</pre>')
 
