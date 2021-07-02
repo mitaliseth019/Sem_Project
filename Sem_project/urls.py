@@ -16,6 +16,8 @@ urlpatterns = [
     path("check_user/",views.check_user,name="check_user"),
     path("user_login",views.user_login,name="user_login"),
     path('<str:username>/', views.profile, name='profile'),
+    path("accounts/login/?next=/findcreator/",views.findcreator,name="findcreator"),
+
     #path("company/",views.sendcompany,name="sendcompany"),
     #path("job/",views.job,name="job"),
     path("cust_dashboard",views.cust_dashboard,name="cust_dashboard"),

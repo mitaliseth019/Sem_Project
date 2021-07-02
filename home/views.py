@@ -30,12 +30,21 @@ def faqpage(request):
     return render(request,"faq.html")
 
 def inbox(request):
-
-    return render(request,"inbox.html")
+    context = {}
+    check = Profile.objects.filter(user__id=request.user.id)
+    if len(check)>0:
+        data = Profile.objects.get(user__id=request.user.id)
+        context["data"] = data
+    return render(request,"inbox.html",context)
 
 def request(request):
+    context = {}
+    check = Profile.objects.filter(user__id=request.user.id)
+    if len(check)>0:
+        data = Profile.objects.get(user__id=request.user.id)
+        context["data"] = data
 
-    return render(request,"request.html")
+    return render(request,"request.html",context)
 
 def contactpage(request):
     thank = False
@@ -199,6 +208,21 @@ def edit_profile(request):
 
         context["status"] = "Changes Saved Successfully"
     return render(request,"edit_profile.html",context)
+def findcreator(request):
+    context={}
+    if request.method=="POST":
+        job_name = request.POST["job_name"]
+        job_email = request.POST["job_email"]
+        job_desc = request.POST["job_desc"]
+        res = Profile.objects.all()
+        for i in res:
+            
+            i.jobname = job_name
+            i.jobemail = job_email
+            i.jobdesc = job_desc
+            i.save()
+            context["status"] = "Changes Saved Successfully"
+    return render(request,"company.html",context)
 
 def change_password(request):
     context={}
