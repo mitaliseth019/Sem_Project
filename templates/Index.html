@@ -36,6 +36,7 @@
                     <li><a href="{% url 'about' %}" >ABOUT</a></li>
                     <li><a href="{% url 'faq' %}" >FAQ</a></li>
                     <li><a href="{% url 'contact' %}" >CONTACT US</a></li>
+                    <li><a href="{% url 'search' %}" >Browse</a></li>
                     <li><a href="{% url 'reg'%}"><button type="submit" class="hero-btn red-btn">Sign In</button></a></li>
                     <li><a href="{% url 'user_login' %}"><button type="submit" class="hero-btn red-btn">Login</button></a></li>
                 </ul>
@@ -51,7 +52,7 @@
                 <br>
                 The right name is an advertisement in itself.
             </p>
-            <a href="{% url 'findcreator'%}"class="hero-btn">Find your Brand Ambassador here</a>
+            <a href="/company" class="hero-btn">Find your Brand Ambassador here</a>
             <a href="{% url 'reg'%}" class="hero-btn">Be the Brand Ambassador</a>
         </div>
         <!--
@@ -300,17 +301,54 @@
     </div>
 </div>
         </section>
-        <section class="register" style="height:250px;">
+        <section class="register">
             <h1>
                 Want to know more about us?
             </h1>
-            <a href="{% url 'about' %}" class="hero-btn">Learn More</a>
+            <a href="" class="hero-btn">Learn More</a>
         </section>
         <div id="chat-circle" class="btn btn-raised">
         <div id="chat-overlay"></div>
         <i class="material-icons">message</i>
   </div>
   
+  <div class="chat-box">
+    <div class="chat-box-header">
+      <div class=".chat-head-img">
+        <img style="width:90px; height:40px" src="/static/images/LOGOO.jpg" alt="Hypeit" class="img-head">
+      </div>
+      <div class=".chat-head-text">
+        <h1 style="font-size:20px; margin-left:40px; margin-right:90px;"  class="text-head" >   Say something</h1>
+      </div>
+      <div class="point"></div>
+      <div class="chat-head-icon chat-box-toggle">
+        <i class="far fa-times-circle" style="font-size: 22px;"></i>
+      </div>
+    </div>
+    <div class="chat-box-body">
+      <div class="chat-box-overlay">   
+      </div>
+      <div class="chat-logs">
+       
+      </div><!--chat-log -->
+    </div>
+
+
+    <div class="chat-box-bottom">
+      
+      <div class="chat-box-bottom-input">
+        <form style="width:400px;">
+          <textarea style="width:400px;" name="chat" class="input-bottom but-send" placeholder="Type your message..." onclick="" id="chat-input"></textarea>
+        <button type="submit" class="chat-submit" id="chat-submit"><i class="material-icons ico-bot-send">send</i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+</div>
 <section class="footer">
         <div class="endgame">
             <div class="end war1">
@@ -345,40 +383,6 @@
         <div class="copyright">
             <p>Copyright Ⓒ 2021 HypeIt. All Rights Reserved.</p>
         </div>
-    
-  <div class="chat-box">
-    <div class="chat-box-header">
-      <div class=".chat-head-img">
-        <img style="width:90px; height:40px" src="/static/images/LOGOO.jpg" alt="Hypeit" class="img-head">
-      </div>
-      <div class=".chat-head-text">
-        <h1 style="font-size:20px; margin-left:40px; margin-right:90px;"  class="text-head" >   Say something</h1>
-      </div>
-      <div class="point"></div>
-      <div class="chat-head-icon chat-box-toggle">
-        <i class="far fa-times-circle" style="font-size: 22px;"></i>
-      </div>
-    </div>
-    <div class="chat-box-body">
-      <div class="chat-box-overlay">   
-      </div>
-      <div class="chat-logs">
-       
-      </div><!--chat-log -->
-    </div>
-
-
-    <div class="chat-box-bottom">
-      
-      <div class="chat-box-bottom-input">
-        <form style="width:400px;">
-          <textarea style="width:400px;" name="chat" class="input-bottom but-send" placeholder="Type your message..." onclick="" id="chat-input"></textarea>
-        <button type="submit" class="chat-submit" id="chat-submit"><i class="material-icons ico-bot-send">send</i></button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 <script src="jquery.js"></script> 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
@@ -500,5 +504,3 @@
 {% endif %}
 </script>
 </body>
-
-</html>
