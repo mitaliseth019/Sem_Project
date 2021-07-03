@@ -227,6 +227,8 @@
     .user img {
       border-radius: 50%;
       border: .7rem orange;
+      width:50px;
+      height:50px;
     }
 
     .user .name {
@@ -320,11 +322,13 @@
       <div class="right">
         <div class="user">
           <a href="{% url 'profile' request.user.username %}">
-            {% if data.image %}
-            <img src="/media/{{data.image}}">
+            {% for i in pro %}
+            {% if i.image %}
+            <img src="/media/{{i.image}}">
             {% else %}
             <img src="{% static 'images/guestuser.jpg' %}">
             {% endif %}
+            {% endfor %}
           </a>
         </div>
       </div>
@@ -376,7 +380,6 @@
                 <div class="info">
                   <p> <i class="fas fa-envelope"></i>{{ user_id.email }}</p>
                   <p> <i class="fas fa-phone"></i>{{ user_id.profile.contact}} </p>
-                  <p> <i class="fas fa-map-marker-alt"></i> mumbai, india - 400104. </p>
                 </div>
                 {% endfor %}
               </div>
@@ -457,15 +460,29 @@
     </div>
     <div class="column">
       <div class="card">
-        <h5 style="color: orange; font-size: 30px; margin-top: 50px; margin-bottom: 10px;margin-left: 12%;">Get Free Quotes</h5>
         <div class="Message">
-          <form action="/action_page.php">
-            <p> </p><br>
 
-            <h1 style>Start the conversation!</h1>
-            <textarea name="Message" cols="40" rows="10" style="border-color: orange;"></textarea><br>
-            <input type="button" value="Send">
-          </form>
+            <p> </p><br>
+            <h1 style>Intrested Category</h1>
+            {% for i in pro %}
+              {% if i.cat1 %}
+                {{i.cat1}}
+              {% else %}
+                <h5>_______</h5>
+              {% endif%}
+              <br>
+              {% if i.cat2 %}
+                {{i.cat2}}
+              {% else %}
+                <h5>_______</h5>
+              {% endif%}
+              <br>
+              {% if i.cat3 %}
+                {{i.cat3}}
+              {% else %}
+                <h5>_______</h5>
+              {% endif%}
+            {% endfor %}
         </div>
         <div>
           <div class="Reviews">

@@ -3,141 +3,140 @@
 {% block head %}
 
 <style>
- 
- 
-.form{
-    margin-bottom: 20px;
-    margin-left: 30px;
-}
-
+    .form {
+        margin-bottom: 20px;
+        margin-left: 30px;
+    }
 </style>
 {% endblock %}
 {% block dashboard %}
 <div class="container-fluid">
     <div class="row">
 
-            
-            <form action="" method="post" class="form" enctype="multipart/form-data" style="margin-bottom: 100px;">
-                {% csrf_token %}
-              
-                {% if status %}
-                <div class="alert alert-primary">{{status}}</div>
-                {% endif %}
-                <div  style="margin-left: 20%; width: 900px; ">
-                  <div class="text-center">
-                {% if data.image %}
-                <img src="/media/{{data.image}}" style="height:150px;margin-bottom: 20px; width:150px;border-radius:50%">
-                {% else %}
-                <img src="{% static 'images/guestuser.jpg' %}"
-                    style="margin-left:20%; margin-bottom: 20px; height:150px;width:150px;border-radius:50%">
-                {% endif %}
-            </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>First Name</label>
-                            <input type="text"   name="fname"  style="margin-bottom:20px; margin-right: 20px;" placeholder="Enter First Name"
-                                value="{{user.first_name}}">
-                        </div>
-                        <div class="col-md-6">
-                            <label>Last Name</label>
-                            <input type="text"    style="margin-bottom:20px; margin-right: 20px;" name="lname" placeholder="Enter Last Name"
-                                value="{{user.last_name}}">
-                        </div>
-                        <div class="col-md-6">
-                            <label>Email</label>
-                            <input type="email"     style="margin-bottom:20px; margin-right: 20px;" name="email" placeholder="Enter Name"
-                                value="{{user.email}}">
-                        </div>
-                        <div class="col-md-6">
-                            <label>Profile Picture</label>
-                            <input type="file"     style="margin-bottom:20px; margin-right: 20px;" name="image">
-                      
-                            <label>Contact Number</label>
-                            <input type="text" value="{{data.contact_number}}"     style="margin-bottom:20px; margin-right: 20px;" name="contact"
-                                placeholder="Enter Contact Number" pattern="[0-9]{10}"
-                                title="Number must contain 10 digits only!!">
-                        </div>
-                        <div class="col-md-6">
-                            <label>Age (in years)</label>
-                            <input type="number"   name="age"  style="margin-bottom:20px; margin-right: 20px;" placeholder="Enter Age" min="15"
-                                max="99" value="{{data.age}}">
-                      
-                            <label >City</label>
-                            <input type="text"   name="city"  style="margin-bottom:20px; margin-right: 20px;"   style="margin-bottom:20px; margin-right: 20px;"placeholder="Enter City"
-                                value="{{data.city}}">
-                                <label>Category2</label>
 
-                                <select name="cat2"   style="margin-bottom:20px; margin-right: 20px;">
-                                    <option>Choose your field</option>
-                                    <option value="fashion">Fashion</option>
-                                    <option value="food">Food</option>
-                                    <option value="music">Music</option>
-                                    <option value="lifestyle">Lifestyle</option>
-                                    <option value="finance">Finance</option>
-                                    <option value="education">Education</option>
-                                    <option value="art">Art</option>
-                                    <option value="science">Science</option>
-                                    <option value="writing">Writing</option>
-                                </select>
-                        </div>
-                        <div class="col-md-6">
-                            <label>Category1</label>
+        <form action="" method="post" class="form" enctype="multipart/form-data" style="margin-bottom: 100px;">
+            {% csrf_token %}
 
-                            <select name="cat1" style="margin-bottom:20px; margin-right: 20px;">
-                                <option>Choose your field</option>
-                                <option value="fashion">Fashion</option>
-                                <option value="food">Food</option>
-                                <option value="music">Music</option>
-                                <option value="lifestyle">Lifestyle</option>
-                                <option value="finance">Finance</option>
-                                <option value="education">Education</option>
-                                <option value="art">Art</option>
-                                <option value="science">Science</option>
-                                <option value="writing">Writing</option>
-                            </select>
-                            <label>Category3</label>
+            {% if status %}
+            <div class="alert alert-primary">{{status}}</div>
+            {% endif %}
+            <div style="margin-left: 20%; width: 900px; ">
+                <div class="text-center">
+                    {% if data.image %}
+                    <img src="/media/{{data.image}}"
+                        style="height:150px;margin-bottom: 20px; width:150px;border-radius:50%">
+                    {% else %}
+                    <img src="{% static 'images/guestuser.jpg' %}"
+                        style="margin-left:20%; margin-bottom: 20px; height:150px;width:150px;border-radius:50%">
+                    {% endif %}
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>First Name</label>
+                        <input type="text" name="fname" style="margin-bottom:20px; margin-right: 20px;"
+                            placeholder="Enter First Name" value="{{user.first_name}}">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Last Name</label>
+                        <input type="text" style="margin-bottom:20px; margin-right: 20px;" name="lname"
+                            placeholder="Enter Last Name" value="{{user.last_name}}">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Email</label>
+                        <input type="email" style="margin-bottom:20px; margin-right: 20px;" name="email"
+                            placeholder="Enter Name" value="{{user.email}}">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Profile Picture</label>
+                        <input type="file" style="margin-bottom:20px; margin-right: 20px;" name="image">
 
-                            <select name="cat3"    style="margin-bottom:20px; margin-right: 20px;">
-                                <option>Choose your field</option>
-                                <option value="fashion">Fashion</option>
-                                <option value="food">Food</option>
-                                <option value="music">Music</option>
-                                <option value="lifestyle">Lifestyle</option>
-                                <option value="finance">Finance</option>
-                                <option value="education">Education</option>
-                                <option value="art">Art</option>
-                                <option value="science">Science</option>
-                                <option value="writing">Writing</option>
-                            </select>
-                        </div>
-                    
-                            <label>Youtube Link</label>
-                    <input type="text"    style="margin-bottom:20px; margin-right: 20px;" placeholder="Enter YouTube Link" name="youtube"
-                        value="{{data.youtube}}">
-                        </div>
-                        <div class="col-md-6">
-                            <label>Instagram Link</label>
-                    <input type="text"    style="margin-bottom:20px; margin-right: 20px;" placeholder="Enter Instagram Link" name="instagram"
-                        value="{{data.instagram}}">
-                        
+                        <label>Contact Number</label>
+                        <input type="text" value="{{data.contact}}" style="margin-bottom:20px; margin-right: 20px;"
+                            name="contact" placeholder="Enter Contact Number" pattern="[0-9]{10}"
+                            title="Number must contain 10 digits only!!">
+                    </div>
+                    <div class="col-md-6">
+                        <label>Age (in years)</label>
+                        <input type="number" name="age" style="margin-bottom:20px; margin-right: 20px;"
+                            placeholder="Enter Age" min="15" max="99" value="{{data.age}}">
+
+                        <label>City</label>
+                        <input type="text" name="city" style="margin-bottom:20px; margin-right: 20px;"
+                            style="margin-bottom:20px; margin-right: 20px;" placeholder="Enter City"
+                            value="{{data.city}}">
+                        <label>Category2</label>
+
+                        <select name="cat2" style="margin-bottom:20px; margin-right: 20px;">
+                            <option>{{data.cat2}}</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="food">Food</option>
+                            <option value="music">Music</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="finance">Finance</option>
+                            <option value="education">Education</option>
+                            <option value="art">Art</option>
+                            <option value="science">Science</option>
+                            <option value="writing">Writing</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Category1</label>
+
+                        <select name="cat1" style="margin-bottom:20px; margin-right: 20px;">
+                            <option>{{data.cat1}}</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="food">Food</option>
+                            <option value="music">Music</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="finance">Finance</option>
+                            <option value="education">Education</option>
+                            <option value="art">Art</option>
+                            <option value="science">Science</option>
+                            <option value="writing">Writing</option>
+                        </select>
+                        <label>Category3</label>
+
+                        <select name="cat3" style="margin-bottom:20px; margin-right: 20px;">
+                            <option>{{data.cat3}}</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="food">Food</option>
+                            <option value="music">Music</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="finance">Finance</option>
+                            <option value="education">Education</option>
+                            <option value="art">Art</option>
+                            <option value="science">Science</option>
+                            <option value="writing">Writing</option>
+                        </select>
+                    </div>
+
+                    <label>Youtube Link</label>
+                    <input type="text" style="margin-bottom:20px; margin-right: 20px;" placeholder="Enter YouTube Link"
+                        name="youtube" value="{{data.youtube}}">
+                </div>
+                <div class="col-md-6">
+                    <label>Instagram Link</label>
+                    <input type="text" style="margin-bottom:20px; margin-right: 20px;"
+                        placeholder="Enter Instagram Link" name="instagram" value="{{data.instagram}}">
+
                     <label>Facebook Link</label>
-                    <input type="text"    style="margin-bottom:20px; margin-right: 20px;" placeholder="Enter facebook Link" name="facebook"
-                        value="{{data.facebook}}">
-                </div>
-                
-                    <label style="margin-top:-300px; margin-right: 10px;">About You</label>
-                    <textarea name="about"  style="margin-top:8px; margin-right: 20px; height: 50px;" placeholder="Write About Yourself"
-                         >{{data.about}}</textarea>
-                </div>
-                
-                <div class="form-group"  style="margin-left: 20%; width: 500px; margin-right: 20px;">
-                    <input type="submit" name="changeprofile"   style="margin-top:20px; margin-right: 20px;" value="Save Changes" class="btn btn-primary"
-                        style="width:50%;border-radius:20px;">
+                    <input type="text" style="margin-bottom:20px; margin-right: 20px;" placeholder="Enter facebook Link"
+                        name="facebook" value="{{data.facebook}}">
                 </div>
 
+                <label style="margin-top:-300px; margin-right: 10px;">About You</label>
+                <textarea name="about" style="margin-top:8px; margin-right: 20px; height: 50px;"
+                    placeholder="Write About Yourself">{{data.about}}</textarea>
+            </div>
 
-            </form>
-        </div>
+            <div class="form-group" style="margin-left: 20%; width: 500px; margin-right: 20px;">
+                <input type="submit" name="changeprofile" style="margin-top:20px; margin-right: 20px;"
+                    value="Save Changes" class="btn btn-primary" style="width:50%;border-radius:20px;">
+            </div>
+
+
+        </form>
     </div>
+</div>
 </div>
 {% endblock %}
