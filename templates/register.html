@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
-    
+
 <head>
 	<title>Login</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+		integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 	<style>
-		body,
-		html {
-			margin: 0;
-			padding: 0;
+		body {
 			height: 100%;
-			background: rgb(129, 129, 129) ;
+			margin: 0;
+			margin-top: 9%;
+			font-family: Arial, Helvetica, sans-serif;
+			display: grid;
+			justify-items: center;
+			align-items: center;
+			background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/banner.jpg);
+
 		}
+
 		.user_card {
-			width: 550px;
-			height:750px;
-			margin-top: auto;
+			width: 450px;
+			height: 660px;
+			margin-top: 5px;
 			margin-bottom: auto;
-			background:rgb(240, 162, 17);
+			background: rgb(240, 162, 17);
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -32,129 +39,169 @@
 			border-radius: 5px;
 
 		}
-        h1{
-			text-align:center;
-			margin-bottom:20px;
-		}
-		#submitbtn{
-			margin-left:180px;
-		}
-		.form_container {
-			margin-top: 20px;
+
+
+
+		.container {
+			background-image: linear-gradient(rgba(104, 102, 102, 0.4), rgba(104, 102, 102, 0.4)), url(images/banner.jpg);
+			border-radius: 10px;
+			box-shadow: 0 14px 28px rgba(231, 161, 8, 0.082), 0 10px 10px rgba(0, 0, 0, 0.22);
+			position: relative;
+			overflow: hidden;
+			width: 450px;
+			margin-top: -50px;
+			height: 672px;
+			margin-bottom: 50px;
+			max-width: 100%;
+			min-height: 480px;
 		}
 
-		#form-title{
-			color: #fff;
+		.form-container {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+
+			transition: all 0.6s ease-in-out;
+		}
+
+		h1 {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+
+		form {
+			background: rgb(240, 162, 17);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			padding: 0 50px;
+			height: 100%;
+			text-align: center;
+
+		}
+
+		input {
+			background-color: #eee;
+			border: none;
+			padding: 12px 15px;
+			margin: 8px 0;
+			margin-top: 10px;
+			width: 100%;
+		}
+
+		.but {
+			border-radius: 20px;
+			border: 1px solid #FFFFFF;
+			background-color: black;
+			color: #ffffff;
+			font-size: 12px;
+			font-weight: bold;
+			padding: 14px 35px;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			margin-top: 10px;
+
 		}
 		
-		.login_container {
-			padding: 0 2rem;
-		}
-		.input-group-text {
-			background: #f7ba5b !important;
-			color: white !important;
-			border: 0 !important;
-			border-radius: 0.25rem 0 0 0.25rem !important;
-		}
-		.input_user,
-		.input_pass:focus {
-			box-shadow: none !important;
-			outline: 0px !important;
-		}
-
 	</style>
 
 </head>
+
 <body>
-	<div class="container h-100">
+	<div class="container">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
 				<h1>Let's Register Creator</h1>
 				<div class="d-flex justify-content-center">
-				
-            <form action="" method="post">
-                {% csrf_token %}
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="">First Name</label>
-                            <input type="text" class="form-control" placeholder="First Name" name="first">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="">Last Name</label>
-                            <input type="text" class="form-control" placeholder="Last Name" name="last">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <p id="result"></p>
-                </div>
-                <div class="form-group">
-                    <label for="">Username</label>
-                    <input type="text" class="form-control" placeholder="Enter Username" name="uname" id="username" onkeyup="checkuser()">
-                </div>
-                <div class="form-group">
-                    <label for="">Password</label>
-                    <input type="password" class="form-control" placeholder="Enter Password" name="password">
-                </div>
-                <div class="form-group">
-                    <label for="">Email</label>
-                    <input type="email" class="form-control" placeholder="Enter Email Address" name="email">
-                </div>
-                <div class="form-group">
-                    <label for="">Contact Number</label>
-                    <input type="number" class="form-control" placeholder="Enter Mobile Number" name="contact">
-                </div>
-                <div class="form-group" >
-                    <label for="">User Type</label>
-                    <select name="utype" class="form-control">
-                        <option value="cust">I am Content Creator</option>
-                        <option value="sell">I am Producer</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Sign Up" class="btn btn-success" id="submitbtn">
-                </div>
-				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Already have an account? <a href="{% url 'user_login' %}" class="ml-2">Login</a>
-					</div>
-				</div>
-            </form>
+
+					<form action="" method="post">
+						{% csrf_token %}
+						<div class="form-group" style="margin-bottom: -10px;">
+							<div class="row">
+								<div class="col-md-6">
+
+									<input type="text" class="form-control" placeholder="First Name" name="first">
+								</div>
+								<div class="col-md-6">
+
+									<input type="text" class="form-control" placeholder="Last Name" name="last">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<p id="result"></p>
+						</div>
+						<div class="form-group">
+
+							<input type="text" class="form-control" placeholder="Enter Username" name="uname"
+								id="username" onkeyup="checkuser()">
+						</div>
+						<div class="form-group">
+
+							<input type="password" class="form-control" placeholder="Enter Password" name="password">
+						</div>
+						<div class="form-group">
+
+							<input type="email" class="form-control" placeholder="Enter Email Address" name="email">
+						</div>
+						<div class="form-group">
+
+							<input type="number" class="form-control" placeholder="Enter Mobile Number" name="contact">
+						</div>
+						<div class="form-group">
+
+							<select name="utype" class="form-control">
+								<option value="cust">I am Content Creator</option>
+								<option value="sell">I am Producer</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Sign Up" class="btn" id="submitbtn">
+						</div>
+						<div class="mt-4">
+							<div class="d-flex justify-content-center links">
+								Already have an account? <a href="{% url 'user_login' %}" class="ml-2">Login</a>
+							</div>
+						</div>
+					</form>
 				</div>
 
-				
-				
+
+
 			</div>
 		</div>
 	</div>
-<script>
-    function checkuser(){
-        let un = document.getElementById("username").value;
-        $.ajax({
-            url:"{% url 'check_user' %}",
-            type:"get",
-            data:{usern:un},
-            success:function(data){
-                if(data=="Exists"){
-                    $("#result").html("This username already taken").addClass("text-danger");
-                    $("#username").addClass("alert alert-danger");
-                    $("#submitbtn").attr("disabled","disabled");
-                }else{
-                    $("#result").html("");
-                    $("#username").removeClass("alert alert-danger")
-                    $("#submitbtn").removeAttr("disabled");
-                }
-            }
-        })
-        
-    }
-</script>
-{% if status %}
-    <script>
-        alert("{{status}}");
-        window.location="/"
-    </script>
-{% endif %}
+	<script>
+		function checkuser() {
+			let un = document.getElementById("username").value;
+			$.ajax({
+				url: "{% url 'check_user' %}",
+				type: "get",
+				data: { usern: un },
+				success: function (data) {
+					if (data == "Exists") {
+						$("#result").html("This username already taken").addClass("text-danger");
+						$("#username").addClass("alert alert-danger");
+						$("#submitbtn").attr("disabled", "disabled");
+					} else {
+						$("#result").html("");
+						$("#username").removeClass("alert alert-danger")
+						$("#submitbtn").removeAttr("disabled");
+					}
+				}
+			})
+
+		}
+	</script>
+	{% if status %}
+	<script>
+		alert("{{status}}");
+		window.location = "/"
+	</script>
+	{% endif %}
 </body>
+
 </html>

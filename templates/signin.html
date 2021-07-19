@@ -20,7 +20,8 @@
             display: grid;
             justify-items: center;
             align-items: center;
-            background-color: gray;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/banner.jpg);
+
         }
 
         p {
@@ -196,16 +197,12 @@
     </div>
     </div>
 </body>
-<script>
-    const signInButton = document.getElementById('signIn');
-    const container = document.getElementById('container');
 
-
-
-    signInButton.addEventListener('click', () => {
-        container.classList.remove('right-panel-active');
-    });
-</script>
+{% if status %}
+    <script>
+        alert("{{status}}");
+    </script>
+{% endif %}
 
 
 </html>
